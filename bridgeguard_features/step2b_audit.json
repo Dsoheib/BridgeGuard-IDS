@@ -1,0 +1,82 @@
+{
+  "step": "STEP2b_sequential_features",
+  "version": "1.0.0",
+  "n_windows": 7772,
+  "n_normal": 5350,
+  "n_attack": 2422,
+  "new_features": [
+    "freq_persistence_5w",
+    "freq_rolling_mean_5w",
+    "freq_rolling_std_5w"
+  ],
+  "rolling_window": 5,
+  "min_periods": 3,
+  "train_fraction": 0.6,
+  "freq_col_used": "alert_frequency_per_hour",
+  "nemg_col_used": "n_emergency",
+  "hedges_g_slow_poisoning": {
+    "freq_persistence_5w": 2.892,
+    "freq_rolling_mean_5w": 1.1121,
+    "freq_rolling_std_5w": 0.6759
+  },
+  "hedges_g_flooding": {
+    "freq_persistence_5w": 2.5974,
+    "freq_rolling_mean_5w": 12.7035,
+    "freq_rolling_std_5w": 1.815
+  },
+  "per_class_stats": {
+    "flooding": {
+      "freq_persistence_5w": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "freq_rolling_mean_5w": {
+        "mean": 19020.23231827112,
+        "std": 5082.59857586332
+      },
+      "freq_rolling_std_5w": {
+        "mean": 1973.1394386971106,
+        "std": 3688.22487453705
+      }
+    },
+    "normal": {
+      "freq_persistence_5w": {
+        "mean": 0.18373831775700936,
+        "std": 0.3288079143513349
+      },
+      "freq_rolling_mean_5w": {
+        "mean": 2.468411214953271,
+        "std": 4.730749313005576
+      },
+      "freq_rolling_std_5w": {
+        "mean": 1.4598707846277297,
+        "std": 2.85402172228142
+      }
+    },
+    "slow_poisoning": {
+      "freq_persistence_5w": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "freq_rolling_mean_5w": {
+        "mean": 7.4223993727130155,
+        "std": 3.568863980064307
+      },
+      "freq_rolling_std_5w": {
+        "mean": 3.2680509602893992,
+        "std": 2.0933092475509465
+      }
+    }
+  },
+  "validation": {
+    "zero_nan_new_features": true,
+    "zero_inf_new_features": true,
+    "persistence_bounded_01": true
+  },
+  "output_files": {
+    "features_labeled_seq": "bridgeguard_features/features_labeled_seq.csv",
+    "features_normal_seq": "bridgeguard_features/features_normal_seq.csv",
+    "features_labeled": "bridgeguard_features/features_labeled.csv",
+    "features_normal": "bridgeguard_features/features_normal.csv"
+  }
+}

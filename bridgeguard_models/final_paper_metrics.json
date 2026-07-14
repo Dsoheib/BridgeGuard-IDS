@@ -1,0 +1,281 @@
+{
+  "calibration": {
+    "platt_iforest": {
+      "ece_before": 0.10765105574023646,
+      "ece_after": 0.022148949877071
+    },
+    "platt_lstm": {
+      "ece_before": 0.022973598597298982,
+      "ece_after": 0.017516771918217836
+    },
+    "temperature_T_star": 1.0003047264327949,
+    "T_at_boundary": false,
+    "T_interpretation": "overconfident",
+    "ece_before": 0.017516771918217836,
+    "ece_after": 0.01750332732130294,
+    "ensemble_strategy": "confidence_gated",
+    "gating_delta": 0.55,
+    "gating_alpha": 0.5,
+    "gating_f1_zone_b": 0.9488272921108742,
+    "gating_auc_zone_b": 0.9953068977914242,
+    "w_iforest": 0.2,
+    "w_lstm": 0.8,
+    "weight_opt_metric": "F1 + FPR constraint (confidence-gated)",
+    "threshold_youden": 0.954919654911232,
+    "threshold_drop_fixed": 0.5
+  },
+  "test_zone_c": {
+    "n_windows": 1546,
+    "n_normal": 1061,
+    "n_attack": 485,
+    "split_method": "stratified_chronological_per_class_last_20pct",
+    "leakage_free": true,
+    "ensemble_drop_thresh": {
+      "auc": 0.9967060835430492,
+      "recall_attack": 0.9030927835051547,
+      "false_alarm_normal": 0.008482563619227144,
+      "recall_normal": 0.9915174363807728,
+      "miss_attack": 0.09690721649484536,
+      "f1": 0.9399141630901288,
+      "n_attack_detected": 438,
+      "n_attack_missed": 47,
+      "n_normal_flagged": 9,
+      "n_normal_accepted": 1052,
+      "tpr_attack": 0.9030927835051547,
+      "fpr_normal": 0.008482563619227144
+    },
+    "ensemble_youden_thresh": {
+      "auc": 0.9967060835430492,
+      "recall_attack": 0.9608247422680413,
+      "false_alarm_normal": 0.02639019792648445,
+      "recall_normal": 0.9736098020735156,
+      "miss_attack": 0.03917525773195876,
+      "f1": 0.9519918283963228,
+      "n_attack_detected": 466,
+      "n_attack_missed": 19,
+      "n_normal_flagged": 28,
+      "n_normal_accepted": 1033,
+      "tpr_attack": 0.9608247422680413,
+      "fpr_normal": 0.02639019792648445
+    },
+    "iforest_only": {
+      "auc": 0.9897937172673125,
+      "recall_attack": 0.9443298969072165,
+      "false_alarm_normal": 0.02639019792648445,
+      "recall_normal": 0.9736098020735156,
+      "miss_attack": 0.05567010309278351,
+      "f1": 0.9433573635427395,
+      "n_attack_detected": 458,
+      "n_attack_missed": 27,
+      "n_normal_flagged": 28,
+      "n_normal_accepted": 1033,
+      "tpr_attack": 0.9443298969072165,
+      "fpr_normal": 0.02639019792648445
+    },
+    "lstm_only": {
+      "auc": 0.99637960686767,
+      "recall_attack": 0.9051546391752577,
+      "false_alarm_normal": 0.024505183788878417,
+      "recall_normal": 0.9754948162111216,
+      "miss_attack": 0.09484536082474226,
+      "f1": 0.9242105263157895,
+      "n_attack_detected": 439,
+      "n_attack_missed": 46,
+      "n_normal_flagged": 26,
+      "n_normal_accepted": 1035,
+      "tpr_attack": 0.9051546391752577,
+      "fpr_normal": 0.024505183788878417
+    },
+    "metric_convention": "positive_class=attack(label=0) | probs=P(normal) | thresh on P(normal)",
+    "ci_false_alarm_normal": [
+      0.0039,
+      0.016
+    ],
+    "ci_recall_attack": [
+      0.8732,
+      0.9279
+    ],
+    "ece_iforest": 0.02664301101329325,
+    "ece_lstm": 0.025024382906078117,
+    "ece_ensemble": 0.014812354330391719
+  },
+  "adversarial": {
+    "method": "real_sequences_last_window_noised",
+    "centroid_repeated": false,
+    "reproducible": true,
+    "seeds_used": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "delta_auc_5pct": 0.0007326292060593209,
+    "robust_overall": true,
+    "results": {
+      "\u00b11%": {
+        "noise_level": 0.01,
+        "auc": 0.9966030879252212,
+        "tpr_attack": 0.9030927835051547,
+        "fpr_normal": 0.008482563619227144,
+        "robust": true,
+        "seed": 42
+      },
+      "\u00b15%": {
+        "noise_level": 0.05,
+        "auc": 0.9959734543369899,
+        "tpr_attack": 0.9134020618556701,
+        "fpr_normal": 0.008482563619227144,
+        "robust": true,
+        "seed": 43
+      },
+      "\u00b110%": {
+        "noise_level": 0.1,
+        "auc": 0.9959890008453414,
+        "tpr_attack": 0.9072164948453608,
+        "fpr_normal": 0.008482563619227144,
+        "robust": true,
+        "seed": 44
+      },
+      "\u00b115%": {
+        "noise_level": 0.15,
+        "auc": 0.9953243876133194,
+        "tpr_attack": 0.9030927835051547,
+        "fpr_normal": 0.008482563619227144,
+        "robust": true,
+        "seed": 45
+      },
+      "\u00b120%": {
+        "noise_level": 0.2,
+        "auc": 0.9946928107115443,
+        "tpr_attack": 0.9030927835051547,
+        "fpr_normal": 0.008482563619227144,
+        "robust": true,
+        "seed": 46
+      },
+      "\u00b130%": {
+        "noise_level": 0.3,
+        "auc": 0.992255895527464,
+        "tpr_attack": 0.8865979381443299,
+        "fpr_normal": 0.008482563619227144,
+        "robust": true,
+        "seed": 47
+      }
+    }
+  },
+  "extended_metrics": {
+    "auprc": {
+      "iforest": 0.9616396499893872,
+      "lstm": 0.9925101753299937,
+      "ensemble": 0.993245441107116,
+      "delta_ens_vs_lstm": 0.0007352657771222404
+    },
+    "bhattacharyya_coefficient": {
+      "iforest": 0.17696125295608367,
+      "lstm": 0.2398203128918347,
+      "ensemble": 0.21982259774149987,
+      "note": "BC=0 means perfect score-space separation"
+    },
+    "detection_delay_minutes": {
+      "iforest": {
+        "n_runs": 1,
+        "n_detected": 1,
+        "detection_rate": 1.0,
+        "median_delay_min": 0.0,
+        "p90_delay_min": 0.0,
+        "early_detect_1w": 1
+      },
+      "lstm": {
+        "n_runs": 1,
+        "n_detected": 1,
+        "detection_rate": 1.0,
+        "median_delay_min": 0.0,
+        "p90_delay_min": 0.0,
+        "early_detect_1w": 1
+      },
+      "ensemble": {
+        "n_runs": 1,
+        "n_detected": 1,
+        "detection_rate": 1.0,
+        "median_delay_min": 0.0,
+        "p90_delay_min": 0.0,
+        "early_detect_1w": 1
+      },
+      "step_minutes": 10,
+      "note": "delay = windows_to_first_alarm \u00d7 step_minutes; 1-win-early = runs detected within first window"
+    },
+    "platt_calibration": {
+      "iforest_ece_before": 0.10765105574023646,
+      "iforest_ece_after": 0.022148949877071,
+      "lstm_ece_before": 0.022973598597298982,
+      "lstm_ece_after": 0.017516771918217836
+    },
+    "confidence_gating": {
+      "delta": 0.55,
+      "alpha": 0.5,
+      "f1_zone_b": 0.9488272921108742,
+      "auc_zone_b": 0.9953068977914242,
+      "fpr_constraint": 0.03,
+      "note": "delta=agreement gap; alpha=IF veto weight (Case 2: LSTM alarms, IF says normal). Case 3 (IF alarms, LSTM says normal) always routes to LSTM \u2014 prevents IF's higher FPR contaminating normal-window decisions. Calibrated on Zone B with FPR_norm \u2264 3% constraint."
+    }
+  },
+  "iforest_advantage_scenarios": {
+    "S1_cold_start": {
+      "n_windows": 1,
+      "note": "insufficient"
+    },
+    "S2_flooding_only": {
+      "n_flooding": 102,
+      "n_normal": 1061,
+      "auc_iforest": 0.9914435142577295,
+      "auc_lstm": 1.0,
+      "delta_if_minus_lm": -0.008556485742270525,
+      "iforest_wins": false,
+      "interpretation": "Flooding is a volumetric anomaly detectable in a single window (g_A2(alert_freq)=5.604). No sequential context required; IForest is architecturally optimal for this attack type."
+    },
+    "S3_isolated_attacks": {
+      "n_isolated": 1,
+      "note": "insufficient"
+    },
+    "S4_early_slow_poisoning": {
+      "n_first_windows_per_run": 5,
+      "n_early_a5_windows": 5,
+      "auc_iforest": 0.9934024505183789,
+      "auc_lstm": 0.9896324222431667,
+      "delta_if_minus_lm": 0.0037700282752122227,
+      "iforest_wins": true,
+      "interpretation": "IForest detects A5 from the first window via inter-alert timing (g_A5(f4)=3.825). LSTM requires sequential build-up \u2014 structurally disadvantaged in the early-detection regime."
+    },
+    "S5_high_noise": {
+      "\u00b120%": {
+        "ensemble_auc": 0.9946928107115443,
+        "ensemble_tpr": 0.9030927835051547,
+        "note": "Per-component noisy AUC not stored in this pipeline version. See adversarial_results for ensemble-level robustness. IForest advantage hypothesis: noise accumulates across LSTM's 10-window history; IForest evaluates each window independently."
+      },
+      "\u00b130%": {
+        "ensemble_auc": 0.992255895527464,
+        "ensemble_tpr": 0.8865979381443299,
+        "note": "Per-component noisy AUC not stored in this pipeline version. See adversarial_results for ensemble-level robustness. IForest advantage hypothesis: noise accumulates across LSTM's 10-window history; IForest evaluates each window independently."
+      }
+    }
+  },
+  "temporal_cv": {
+    "method": "TimeSeriesSplit_on_mixed_train",
+    "n_folds_valid": 5,
+    "auc_mean": 0.9863820328031142,
+    "auc_std": 0.00770352548699759,
+    "auc_min": 0.9732947698240539,
+    "tpr_mean": 0.9801536903410456,
+    "fpr_mean": 0.12398400829122566,
+    "verdict": "TEMPORALLY ROBUST"
+  },
+  "metadata": {
+    "scaler_iforest": "feature_scaler_selected.pkl (IForest training)",
+    "scaler_lstm": "LSTM training (correct chronological mixed)",
+    "iforest_prob_method": "min-max empirical calibration",
+    "sigmoid_magic_number": false,
+    "split_violated": false,
+    "random_seed": 42
+  }
+}

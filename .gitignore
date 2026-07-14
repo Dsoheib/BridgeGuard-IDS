@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.DS_Store
+*.bak
+*.bak*
+logs/
+toniot_data/
+MQTTset/
+baseline_data/
+toniot_results/
+shap_lime_results/
+stats_results/
+rpi4_latency_results/

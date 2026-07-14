@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: "BridgeGuard: Behavioral Detection of Sub-Threshold Semantic Attacks in Healthcare MQTT Bridges via Calibrated Edge Ensembles"
+message: If you use this software, please cite our paper.
+type: software
+authors:
+  - family-names: Cherih
+    given-names: Soheib
+  - family-names: Lyazid
+    given-names: Sabri
+date-released: "2026-07-13"
+version: "1.0"
+repository-code: https://github.com/Dsoheib/BridgeGuard-IDS

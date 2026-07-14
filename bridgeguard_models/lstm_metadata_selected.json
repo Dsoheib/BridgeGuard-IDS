@@ -1,0 +1,81 @@
+{
+  "model_type": "LSTM_v3.1_mixed_stream_temporal",
+  "architecture": "DEEP LSTM(64+32)",
+  "training_date": "2026-06-24T07:43:42.632416",
+  "feature_names": [
+    "payload_entropy",
+    "topic_diversity",
+    "temporal_clustering_score",
+    "normal_emergency_ratio",
+    "inter_alert_interval_mean",
+    "freq_rolling_std_5w",
+    "inter_interval_variance",
+    "alert_rate_acceleration"
+  ],
+  "n_features": 8,
+  "sequence_length": 10,
+  "epochs_run": 41,
+  "best_val_auc_training": 0.9956212639808655,
+  "evaluation_temporal_test": {
+    "n_sequences": 1518,
+    "split_method": "chronological_last_20pct",
+    "multiclass": true,
+    "auc": 0.9967536866331068,
+    "tpr_normal": 0.9752066115702479,
+    "tpr_attack": 0.9612518628912071,
+    "fpr": 0.038748137108792845
+  },
+  "evaluation_temporal_cv": {
+    "method": "TimeSeriesSplit_on_mixed_train",
+    "n_folds_valid": 5,
+    "auc_mean": 0.9863820328031142,
+    "auc_std": 0.00770352548699759,
+    "auc_min": 0.9732947698240539,
+    "tpr_mean": 0.9801536903410456,
+    "fpr_mean": 0.12398400829122566,
+    "verdict": "TEMPORALLY ROBUST"
+  },
+  "adversarial_robustness": {
+    "method": "real_sequences_from_test_set",
+    "centroid_repeated": false,
+    "noise_levels_tested": [
+      0.0,
+      0.05,
+      0.1
+    ],
+    "delta_auc_0_to_5pct": 7.653909564220296e-05,
+    "robust": true,
+    "results": {
+      "\u00b10%": {
+        "noise_level": 0.0,
+        "auc": 0.9967536866331068,
+        "tpr_normal": 0.9752066115702479,
+        "tpr_attack": 0.9612518628912071,
+        "robust": true
+      },
+      "\u00b15%": {
+        "noise_level": 0.05,
+        "auc": 0.9966771475374646,
+        "tpr_normal": 0.974025974025974,
+        "tpr_attack": 0.9597615499254843,
+        "robust": true
+      },
+      "\u00b110%": {
+        "noise_level": 0.1,
+        "auc": 0.9965979691626622,
+        "tpr_normal": 0.9728453364817001,
+        "tpr_attack": 0.9597615499254843,
+        "robust": true
+      }
+    }
+  },
+  "data_pipeline": {
+    "sequencing_method": "mixed_chronological_stream",
+    "hallucination_free": true,
+    "max_gap_minutes": 120,
+    "timestamp_col_used": "window_start_time",
+    "split_method": "temporal_chronological_no_shuffle",
+    "test_leakage_free": true,
+    "circular_cv_logic": false
+  }
+}

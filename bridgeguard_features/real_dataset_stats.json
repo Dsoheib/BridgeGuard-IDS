@@ -1,0 +1,50 @@
+{
+  "total": 7772,
+  "normal": 5350,
+  "attack2_flooding": 509,
+  "attack5_slow": 1913,
+  "train": 3820,
+  "test": 3952,
+  "window_size_min": 60,
+  "step_normal_min": 10,
+  "step_attack_min": 15,
+  "overlap_normal_pct": 83,
+  "overlap_attack_pct": 75,
+  "test_size": 0.4,
+  "preserve_order": true,
+  "min_emergency_attack": 1,
+  "preprocessor": {
+    "medians": {
+      "alert_frequency_per_hour": 0.0,
+      "normal_emergency_ratio": 1674.5,
+      "inter_alert_interval_mean": 0.02739309079267762,
+      "inter_interval_variance": 0.0,
+      "burst_score": 0.0,
+      "topic_diversity": 0.0,
+      "time_sin": -0.03489949670250171,
+      "time_cos": -0.008726535498373997,
+      "payload_entropy": 0.0,
+      "consecutive_emergency_count": 0.0,
+      "alert_rate_acceleration": 0.0,
+      "regularity_coefficient": 11.409203737861283,
+      "temporal_clustering_score": 1.0
+    },
+    "clip_upper": {
+      "alert_frequency_per_hour": 33569.0,
+      "normal_emergency_ratio": 2544.81,
+      "inter_alert_interval_mean": 15.437392567793543,
+      "inter_interval_variance": 158.98009447961647,
+      "burst_score": 2799.0,
+      "topic_diversity": 3.0,
+      "time_sin": 0.9993908270190958,
+      "time_cos": 0.9993908270190957,
+      "payload_entropy": 5.071170176635694,
+      "consecutive_emergency_count": 1.0,
+      "alert_rate_acceleration": 35.809999999999945,
+      "regularity_coefficient": 100.0,
+      "temporal_clustering_score": 1.9999094483498154
+    }
+  },
+  "source": "100% real MQTT captures (interleaved)",
+  "synthetic": false
+}

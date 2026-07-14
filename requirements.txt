@@ -1,0 +1,11 @@
+# Tested environment (paper Section 5.1): Python 3.11
+numpy==2.4.2
+pandas>=2.0
+scikit-learn==1.8.0
+tensorflow==2.20.0
+matplotlib>=3.8
+seaborn>=0.13
+shap==0.50.0
+scipy>=1.11
+tqdm>=4.66
+joblib>=1.3
