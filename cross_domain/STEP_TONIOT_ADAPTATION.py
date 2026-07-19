@@ -20,6 +20,16 @@ Key components
 
 Usage: python cross_domain_evaluation.py
 """
+#
+# ToN-IoT DATA PROVENANCE — the cross-domain evaluation uses the OFFICIAL
+# unmodified ToN-IoT files (Alsaedi et al., IEEE Access 2020):
+#   Processed_datasets/Processed_IoT_dataset/{IoT_Fridge,IoT_Thermostat,IoT_Weather}.csv
+# Official download folder (UNSW SharePoint):
+#   https://unsw-my.sharepoint.com/:f:/g/personal/z5025758_ad_unsw_edu_au/EvBTaetotpdGnW7rJQ8fCvYBh8063CNeY9W33MpRsarJaQ?e=yZlnxW
+# Project page: https://research.unsw.edu.au/projects/toniot-datasets
+# SHA-256 checksums of the exact files used: see toniot_data/README.md
+#
+
 
 import os, sys, json, pickle, warnings
 import numpy as np

@@ -4,7 +4,8 @@ __pycache__/
 *.bak
 *.bak*
 logs/
-toniot_data/
+toniot_data/*
+!toniot_data/README.md
 MQTTset/
 baseline_data/
 toniot_results/

@@ -90,6 +90,16 @@ BridgeGuard
 
 The BridgeGuard pipeline is executed in the following order.
 
+## Cross-Domain Datasets (ToN-IoT) — Provenance
+
+The cross-domain evaluation uses the **official, unmodified** ToN-IoT
+processed IoT files (`IoT_Fridge.csv`, `IoT_Thermostat.csv`,
+`IoT_Weather.csv`). Direct download links (UNSW SharePoint), the exact
+folder path, and **SHA-256 checksums** of the files used are documented in
+[`toniot_data/README.md`](toniot_data/README.md). All preprocessing is
+performed at runtime by the released scripts; no ToN-IoT sample is used
+for model fitting (zero-shot).
+
 ## 1. Window Extraction
 
 ```
