@@ -1,0 +1,37 @@
+{
+  "model": {
+    "params_total": 31649,
+    "params_trainable": 31649,
+    "keras_size_kb": 410.3,
+    "tflite_size_kb": 73.1,
+    "peak_ram_mb": 0.267,
+    "seq_len": 10,
+    "n_features": 8
+  },
+  "benchmark_dev": {
+    "n_inferences": 200,
+    "p50_ms": 19.508,
+    "p95_ms": 25.753,
+    "p99_ms": 46.076,
+    "mean_ms": 21.03,
+    "std_ms": 7.638,
+    "keras_p50_ms": 19.508,
+    "keras_p99_ms": 46.076,
+    "tflite_speedup_p50": 1.0
+  },
+  "rpi4_estimate": {
+    "ratio_lo": 100.0,
+    "ratio_med": 150.0,
+    "ratio_hi": 200.0,
+    "p50_ms_lo": 1951.0,
+    "p50_ms_med": 2926.0,
+    "p50_ms_hi": 3902.0,
+    "p99_ms_lo": 4608.0,
+    "p99_ms_med": 6911.0,
+    "p99_ms_hi": 9215.0,
+    "window_budget_ms": 300000.0,
+    "margin_pct": 96.9,
+    "feasible": false,
+    "ratio_source": "TFLite Benchmark Tool, ARM Cortex-A72 vs Apple M-series"
+  }
+}
