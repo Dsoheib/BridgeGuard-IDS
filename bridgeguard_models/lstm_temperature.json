@@ -1,16 +1,16 @@
 {
-  "temperature": 1.0003047264327949,
-  "gating_delta": 0.55,
+  "temperature": 1.0000245657879578,
+  "gating_delta": 0.65,
   "gating_alpha": 0.5,
   "w_iforest": 0.2,
   "w_lstm": 0.8,
   "threshold_drop": 0.5,
-  "threshold_youden": 0.954919654911232,
+  "threshold_youden": 0.9489444194806058,
   "requires_recalibration": false,
-  "calibrated_by": "ensemble_calibration",
+  "calibrated_by": "STEP7_v4",
   "ensemble_strategy": "confidence_gated_platt_temperature",
   "calibration_zone": "stratified_chronological_per_class_zone_b_20pct",
-  "probs_semantics": "P(normal|x): high = normal, low = attack",
+  "probs_semantics": "P(normal|x) \u2014 high = normal, low = attack",
   "positive_class": "attack (label=0)",
   "threshold_semantics": "predict_attack if P(normal) < threshold_drop",
   "ci_fpr_normal": [
@@ -18,8 +18,8 @@
     0.016
   ],
   "ci_tpr_attack": [
-    0.8732,
-    0.9279
+    0.8894,
+    0.9404
   ],
   "platt_iforest_pkl": "bridgeguard_models/platt_iforest.pkl",
   "platt_lstm_pkl": "bridgeguard_models/platt_lstm.pkl",

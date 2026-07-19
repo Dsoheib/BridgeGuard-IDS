@@ -5,23 +5,23 @@
       "ece_after": 0.022148949877071
     },
     "platt_lstm": {
-      "ece_before": 0.022973598597298982,
-      "ece_after": 0.017516771918217836
+      "ece_before": 0.014474143894006131,
+      "ece_after": 0.01431798242316204
     },
-    "temperature_T_star": 1.0003047264327949,
+    "temperature_T_star": 1.0000245657879578,
     "T_at_boundary": false,
     "T_interpretation": "overconfident",
-    "ece_before": 0.017516771918217836,
-    "ece_after": 0.01750332732130294,
+    "ece_before": 0.01431798242316204,
+    "ece_after": 0.014317510224363221,
     "ensemble_strategy": "confidence_gated",
-    "gating_delta": 0.55,
+    "gating_delta": 0.65,
     "gating_alpha": 0.5,
-    "gating_f1_zone_b": 0.9488272921108742,
-    "gating_auc_zone_b": 0.9953068977914242,
+    "gating_f1_zone_b": 0.9545934530095037,
+    "gating_auc_zone_b": 0.9951689225298056,
     "w_iforest": 0.2,
     "w_lstm": 0.8,
-    "weight_opt_metric": "F1 + FPR constraint (confidence-gated)",
-    "threshold_youden": 0.954919654911232,
+    "weight_opt_metric": "F1+FPR_constraint (confidence-gated)",
+    "threshold_youden": 0.9489444194806058,
     "threshold_drop_fixed": 0.5
   },
   "test_zone_c": {
@@ -29,34 +29,35 @@
     "n_normal": 1061,
     "n_attack": 485,
     "split_method": "stratified_chronological_per_class_last_20pct",
+    "zone_c_fix_version": "v3",
     "leakage_free": true,
     "ensemble_drop_thresh": {
-      "auc": 0.9967060835430492,
-      "recall_attack": 0.9030927835051547,
+      "auc": 0.9966730472128026,
+      "recall_attack": 0.9175257731958762,
       "false_alarm_normal": 0.008482563619227144,
       "recall_normal": 0.9915174363807728,
-      "miss_attack": 0.09690721649484536,
-      "f1": 0.9399141630901288,
-      "n_attack_detected": 438,
-      "n_attack_missed": 47,
+      "miss_attack": 0.08247422680412371,
+      "f1": 0.9478168264110756,
+      "n_attack_detected": 445,
+      "n_attack_missed": 40,
       "n_normal_flagged": 9,
       "n_normal_accepted": 1052,
-      "tpr_attack": 0.9030927835051547,
+      "tpr_attack": 0.9175257731958762,
       "fpr_normal": 0.008482563619227144
     },
     "ensemble_youden_thresh": {
-      "auc": 0.9967060835430492,
-      "recall_attack": 0.9608247422680413,
-      "false_alarm_normal": 0.02639019792648445,
-      "recall_normal": 0.9736098020735156,
-      "miss_attack": 0.03917525773195876,
-      "f1": 0.9519918283963228,
-      "n_attack_detected": 466,
-      "n_attack_missed": 19,
-      "n_normal_flagged": 28,
-      "n_normal_accepted": 1033,
-      "tpr_attack": 0.9608247422680413,
-      "fpr_normal": 0.02639019792648445
+      "auc": 0.9966730472128026,
+      "recall_attack": 0.9690721649484536,
+      "false_alarm_normal": 0.03204524033930255,
+      "recall_normal": 0.9679547596606974,
+      "miss_attack": 0.030927835051546393,
+      "f1": 0.9504550050556118,
+      "n_attack_detected": 470,
+      "n_attack_missed": 15,
+      "n_normal_flagged": 34,
+      "n_normal_accepted": 1027,
+      "tpr_attack": 0.9690721649484536,
+      "fpr_normal": 0.03204524033930255
     },
     "iforest_only": {
       "auc": 0.9897937172673125,
@@ -73,18 +74,18 @@
       "fpr_normal": 0.02639019792648445
     },
     "lstm_only": {
-      "auc": 0.99637960686767,
-      "recall_attack": 0.9051546391752577,
-      "false_alarm_normal": 0.024505183788878417,
-      "recall_normal": 0.9754948162111216,
-      "miss_attack": 0.09484536082474226,
-      "f1": 0.9242105263157895,
-      "n_attack_detected": 439,
-      "n_attack_missed": 46,
-      "n_normal_flagged": 26,
-      "n_normal_accepted": 1035,
-      "tpr_attack": 0.9051546391752577,
-      "fpr_normal": 0.024505183788878417
+      "auc": 0.996255234800859,
+      "recall_attack": 0.9195876288659793,
+      "false_alarm_normal": 0.02544769085768143,
+      "recall_normal": 0.9745523091423186,
+      "miss_attack": 0.08041237113402062,
+      "f1": 0.9311064718162839,
+      "n_attack_detected": 446,
+      "n_attack_missed": 39,
+      "n_normal_flagged": 27,
+      "n_normal_accepted": 1034,
+      "tpr_attack": 0.9195876288659793,
+      "fpr_normal": 0.02544769085768143
     },
     "metric_convention": "positive_class=attack(label=0) | probs=P(normal) | thresh on P(normal)",
     "ci_false_alarm_normal": [
@@ -92,12 +93,12 @@
       0.016
     ],
     "ci_recall_attack": [
-      0.8732,
-      0.9279
+      0.8894,
+      0.9404
     ],
     "ece_iforest": 0.02664301101329325,
-    "ece_lstm": 0.025024382906078117,
-    "ece_ensemble": 0.014812354330391719
+    "ece_lstm": 0.022088925929567335,
+    "ece_ensemble": 0.02208887251539592
   },
   "adversarial": {
     "method": "real_sequences_last_window_noised",
@@ -111,53 +112,53 @@
       46,
       47
     ],
-    "delta_auc_5pct": 0.0007326292060593209,
+    "delta_auc_5pct": 0.0006607266049341032,
     "robust_overall": true,
     "results": {
       "\u00b11%": {
         "noise_level": 0.01,
-        "auc": 0.9966030879252212,
-        "tpr_attack": 0.9030927835051547,
+        "auc": 0.9966827637805222,
+        "tpr_attack": 0.9175257731958762,
         "fpr_normal": 0.008482563619227144,
         "robust": true,
         "seed": 42
       },
       "\u00b15%": {
         "noise_level": 0.05,
-        "auc": 0.9959734543369899,
-        "tpr_attack": 0.9134020618556701,
+        "auc": 0.9960123206078685,
+        "tpr_attack": 0.9216494845360824,
         "fpr_normal": 0.008482563619227144,
         "robust": true,
         "seed": 43
       },
       "\u00b110%": {
         "noise_level": 0.1,
-        "auc": 0.9959890008453414,
-        "tpr_attack": 0.9072164948453608,
+        "auc": 0.9958490822701789,
+        "tpr_attack": 0.9237113402061856,
         "fpr_normal": 0.008482563619227144,
         "robust": true,
         "seed": 44
       },
       "\u00b115%": {
         "noise_level": 0.15,
-        "auc": 0.9953243876133194,
-        "tpr_attack": 0.9030927835051547,
+        "auc": 0.9946345113052266,
+        "tpr_attack": 0.9134020618556701,
         "fpr_normal": 0.008482563619227144,
         "robust": true,
         "seed": 45
       },
       "\u00b120%": {
         "noise_level": 0.2,
-        "auc": 0.9946928107115443,
-        "tpr_attack": 0.9030927835051547,
+        "auc": 0.994090383512928,
+        "tpr_attack": 0.9092783505154639,
         "fpr_normal": 0.008482563619227144,
         "robust": true,
         "seed": 46
       },
       "\u00b130%": {
         "noise_level": 0.3,
-        "auc": 0.992255895527464,
-        "tpr_attack": 0.8865979381443299,
+        "auc": 0.9888045706734553,
+        "tpr_attack": 0.8824742268041237,
         "fpr_normal": 0.008482563619227144,
         "robust": true,
         "seed": 47
@@ -167,15 +168,15 @@
   "extended_metrics": {
     "auprc": {
       "iforest": 0.9616396499893872,
-      "lstm": 0.9925101753299937,
-      "ensemble": 0.993245441107116,
-      "delta_ens_vs_lstm": 0.0007352657771222404
+      "lstm": 0.9921994472879516,
+      "ensemble": 0.9931540746012892,
+      "delta_ens_vs_lstm": 0.0009546273133376193
     },
     "bhattacharyya_coefficient": {
       "iforest": 0.17696125295608367,
-      "lstm": 0.2398203128918347,
-      "ensemble": 0.21982259774149987,
-      "note": "BC=0 means perfect score-space separation"
+      "lstm": 0.2165469688533953,
+      "ensemble": 0.178458882785117,
+      "note": "BC\u21920 means perfect score-space separation"
     },
     "detection_delay_minutes": {
       "iforest": {
@@ -203,21 +204,21 @@
         "early_detect_1w": 1
       },
       "step_minutes": 10,
-      "note": "delay = windows_to_first_alarm \u00d7 step_minutes; 1-win-early = runs detected within first window"
+      "note": "window_delay * step_minutes; 1W-early = runs detected in \u22641 window"
     },
     "platt_calibration": {
       "iforest_ece_before": 0.10765105574023646,
       "iforest_ece_after": 0.022148949877071,
-      "lstm_ece_before": 0.022973598597298982,
-      "lstm_ece_after": 0.017516771918217836
+      "lstm_ece_before": 0.014474143894006131,
+      "lstm_ece_after": 0.01431798242316204
     },
     "confidence_gating": {
-      "delta": 0.55,
+      "delta": 0.65,
       "alpha": 0.5,
-      "f1_zone_b": 0.9488272921108742,
-      "auc_zone_b": 0.9953068977914242,
+      "f1_zone_b": 0.9545934530095037,
+      "auc_zone_b": 0.9951689225298056,
       "fpr_constraint": 0.03,
-      "note": "delta=agreement gap; alpha=IF veto weight (Case 2: LSTM alarms, IF says normal). Case 3 (IF alarms, LSTM says normal) always routes to LSTM \u2014 prevents IF's higher FPR contaminating normal-window decisions. Calibrated on Zone B with FPR_norm \u2264 3% constraint."
+      "note": "\u03b4=agreement gap; \u03b1=IF veto weight (Case 2: LSTM alarms, IF says normal). Case 3 (IF alarms, LSTM says normal) always routes to LSTM \u2014 prevents IF's higher FPR contaminating normal windows. Calibrated on Zone B with FPR_norm \u2264 3% constraint."
     }
   },
   "iforest_advantage_scenarios": {
@@ -242,38 +243,38 @@
       "n_first_windows_per_run": 5,
       "n_early_a5_windows": 5,
       "auc_iforest": 0.9934024505183789,
-      "auc_lstm": 0.9896324222431667,
-      "delta_if_minus_lm": 0.0037700282752122227,
+      "auc_lstm": 0.9898209236569274,
+      "delta_if_minus_lm": 0.0035815268614515228,
       "iforest_wins": true,
-      "interpretation": "IForest detects A5 from the first window via inter-alert timing (g_A5(f4)=3.825). LSTM requires sequential build-up \u2014 structurally disadvantaged in the early-detection regime."
+      "interpretation": "IForest detects A5 from first window via inter-alert timing (g_A5(f4)=3.825). LSTM requires sequential buildup \u2014 structurally disadvantaged in early-detection regime."
     },
     "S5_high_noise": {
       "\u00b120%": {
-        "ensemble_auc": 0.9946928107115443,
-        "ensemble_tpr": 0.9030927835051547,
+        "ensemble_auc": 0.994090383512928,
+        "ensemble_tpr": 0.9092783505154639,
         "note": "Per-component noisy AUC not stored in this pipeline version. See adversarial_results for ensemble-level robustness. IForest advantage hypothesis: noise accumulates across LSTM's 10-window history; IForest evaluates each window independently."
       },
       "\u00b130%": {
-        "ensemble_auc": 0.992255895527464,
-        "ensemble_tpr": 0.8865979381443299,
+        "ensemble_auc": 0.9888045706734553,
+        "ensemble_tpr": 0.8824742268041237,
         "note": "Per-component noisy AUC not stored in this pipeline version. See adversarial_results for ensemble-level robustness. IForest advantage hypothesis: noise accumulates across LSTM's 10-window history; IForest evaluates each window independently."
       }
     }
   },
-  "temporal_cv": {
+  "temporal_cv_step6": {
     "method": "TimeSeriesSplit_on_mixed_train",
     "n_folds_valid": 5,
-    "auc_mean": 0.9863820328031142,
-    "auc_std": 0.00770352548699759,
-    "auc_min": 0.9732947698240539,
-    "tpr_mean": 0.9801536903410456,
-    "fpr_mean": 0.12398400829122566,
+    "auc_mean": 0.9893361043307312,
+    "auc_std": 0.003774100634714868,
+    "auc_min": 0.9843456254519162,
+    "tpr_mean": 0.9769217422769373,
+    "fpr_mean": 0.10815843259987437,
     "verdict": "TEMPORALLY ROBUST"
   },
   "metadata": {
-    "scaler_iforest": "feature_scaler_selected.pkl (IForest training)",
-    "scaler_lstm": "LSTM training (correct chronological mixed)",
-    "iforest_prob_method": "min-max empirical calibration",
+    "scaler_iforest": "feature_scaler_selected.pkl (STEP5)",
+    "scaler_lstm": "STEP6 (correct \u2014 mixte chronologique)",
+    "iforest_prob_method": "min-max empirical (STEP5)",
     "sigmoid_magic_number": false,
     "split_violated": false,
     "random_seed": 42

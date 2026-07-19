@@ -211,6 +211,19 @@ Results are exported to:
 bridgeguard_models/final_paper_metrics.json
 ```
 
+> **Note on calibration artifacts.** The shipped
+> `bridgeguard_models/lstm_temperature.json`, `platt_lstm.pkl`, and
+> `final_paper_metrics.json` are the **paper-era artifacts**
+> (T* = 1.0000, gating delta = 0.65, Youden threshold = 0.949,
+> TPR = 91.8%, FPR = 0.8%, AUC = 0.9967), matching the values reported
+> in the paper. Running `evaluate_bridgeguard.py` **refits** the Platt
+> calibrators, the temperature T*, and the gating parameters from
+> Zone-B data and overwrites these files; depending on the exact
+> library stack, the refit may converge to marginally different values
+> (e.g., T* within 3e-4 of unity) with metrics within the paper's
+> reported confidence intervals. To restore the paper-era calibration,
+> revert these three files from git.
+
 ---
 
 ## 7. Statistical Validation
