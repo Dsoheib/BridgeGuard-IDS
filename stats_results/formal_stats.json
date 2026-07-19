@@ -1,0 +1,76 @@
+{
+  "version": "v3-platt-confidence-gated",
+  "zone_c": {
+    "split_method": "stratified_chronological_per_class_last_20pct",
+    "n_total": 1546,
+    "n_normal": 1061,
+    "n_attack": 485
+  },
+  "calibration": {
+    "T_star": 1.0,
+    "T_at_boundary": false,
+    "gating_delta": 0.65,
+    "gating_alpha": 0.5,
+    "platt_applied": true,
+    "ece_iforest_raw": 0.1077,
+    "ece_iforest_cal": 0.0221,
+    "ece_lstm_raw": 0.0145,
+    "ece_lstm_cal": 0.0143,
+    "ece_before": 0.0143,
+    "ece_after": 0.0143,
+    "w_IF": 0.2,
+    "w_LSTM": 0.8
+  },
+  "point_estimates": {
+    "tpr_attack_ensemble": 0.9175,
+    "fpr_normal_ensemble": 0.0085,
+    "tpr_attack_iforest": 0.9443,
+    "fpr_normal_iforest": 0.0264,
+    "auc_ensemble": 0.9967,
+    "auc_iforest": 0.9898,
+    "auprc_ensemble": 0.9932,
+    "auprc_iforest": 0.9616
+  },
+  "clopper_pearson_95": {
+    "tpr_attack": [
+      0.8894,
+      0.9404
+    ],
+    "fpr_normal": [
+      0.0039,
+      0.016
+    ],
+    "tpr_iforest": [
+      0.92,
+      0.963
+    ]
+  },
+  "mcnemar": {
+    "b": 18,
+    "c": 5,
+    "n_discordant": 23,
+    "chi2": 6.2609,
+    "p_value": 0.0123,
+    "power_pct": 0.0,
+    "significant": true,
+    "direction": "iforest_better_tpr",
+    "note": "Compared on attack windows; both models use Platt-calibrated scores. direction=ensemble_better means c>b (ensemble detects attacks IForest misses more often)."
+  },
+  "mcnemar_normals": {
+    "b_norm": 2,
+    "c_norm": 21,
+    "n_discordant": 23,
+    "chi2": 14.087,
+    "p_value": 0.0002,
+    "significant": true,
+    "direction": "ensemble_fewer_fa",
+    "note": "McNemar on NORMAL windows: c_norm=IForest FA/ensemble correct, b_norm=ensemble FA/IForest correct. Tests FPR reduction claim."
+  },
+  "bootstrap_auc": {
+    "n_bootstrap": 10000,
+    "n_zone_c": 1546,
+    "auc": 0.9967,
+    "ci_lo": 0.9952,
+    "ci_hi": 0.9979
+  }
+}

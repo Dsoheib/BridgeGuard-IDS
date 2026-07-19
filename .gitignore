@@ -8,6 +8,8 @@ toniot_data/
 MQTTset/
 baseline_data/
 toniot_results/
-shap_lime_results/
-stats_results/
+shap_lime_results/*
+!shap_lime_results/convergence_table.json
+stats_results/*
+!stats_results/formal_stats.json
 rpi4_latency_results/

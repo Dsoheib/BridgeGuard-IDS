@@ -1,0 +1,102 @@
+{
+  "experiment": "SHAP-KernelExplainer (IForest) + SHAP-GradientExplainer (LSTM) Complementarity Analysis (Production v3)",
+  "zone_c_n_windows": 1555,
+  "zone_c_n_normal": 1070,
+  "zone_c_n_attack": 485,
+  "split_method": "stratified_chronological_per_attack_type_last_20pct",
+  "n_a5_shap": 74,
+  "n_a5_gradexp": 20,
+  "n_background": 88,
+  "shap_iforest_a5": {
+    "payload_entropy": 7.94,
+    "topic_diversity": 5.33,
+    "temporal_clustering_score": 17.97,
+    "normal_emergency_ratio": 6.35,
+    "inter_alert_interval_mean": 27.91,
+    "freq_rolling_std_5w": 10.87,
+    "inter_interval_variance": 21.23,
+    "alert_rate_acceleration": 2.39
+  },
+  "gradexp_lstm_a5": {
+    "payload_entropy": 28.45,
+    "topic_diversity": 22.25,
+    "temporal_clustering_score": 9.32,
+    "normal_emergency_ratio": 7.77,
+    "inter_alert_interval_mean": 26.47,
+    "freq_rolling_std_5w": 0.01,
+    "inter_interval_variance": 5.7,
+    "alert_rate_acceleration": 0.02
+  },
+  "f4_shap": 27.91,
+  "f5_shap": 21.23,
+  "f4f5_shap": 49.14,
+  "lstm_primary_feature": "payload_entropy",
+  "lstm_primary_pct": 28.45,
+  "f4_gradexp": 26.47,
+  "f5_gradexp": 5.7,
+  "f4f5_gradexp": 32.18,
+  "delta_f4f5_pp": 16.97,
+  "f4_converged": true,
+  "f5_converged": false,
+  "interpretation": "complementary_mechanisms",
+  "iforest_primary": "f4+f5 (inter-alert interval mean + variance)",
+  "lstm_primary": "f1 (temporal clustering score)",
+  "complementarity_table": {
+    "payload_entropy": {
+      "shap": 7.94,
+      "lime": 28.45,
+      "delta": 20.51,
+      "converged": false,
+      "key": false
+    },
+    "topic_diversity": {
+      "shap": 5.33,
+      "lime": 22.25,
+      "delta": 16.92,
+      "converged": false,
+      "key": false
+    },
+    "temporal_clustering_score": {
+      "shap": 17.97,
+      "lime": 9.32,
+      "delta": 8.66,
+      "converged": true,
+      "key": false
+    },
+    "normal_emergency_ratio": {
+      "shap": 6.35,
+      "lime": 7.77,
+      "delta": 1.42,
+      "converged": true,
+      "key": false
+    },
+    "inter_alert_interval_mean": {
+      "shap": 27.91,
+      "lime": 26.47,
+      "delta": 1.44,
+      "converged": true,
+      "key": true
+    },
+    "freq_rolling_std_5w": {
+      "shap": 10.87,
+      "lime": 0.01,
+      "delta": 10.86,
+      "converged": true,
+      "key": false
+    },
+    "inter_interval_variance": {
+      "shap": 21.23,
+      "lime": 5.7,
+      "delta": 15.53,
+      "converged": false,
+      "key": true
+    },
+    "alert_rate_acceleration": {
+      "shap": 2.39,
+      "lime": 0.02,
+      "delta": 2.37,
+      "converged": true,
+      "key": false
+    }
+  }
+}
