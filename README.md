@@ -1,7 +1,7 @@
 # BridgeGuard: a pre-registered evaluation of label-free alert-injection detection at healthcare MQTT bridges
 
 This repository holds the code, configuration, injection records and protocol documents of the study *A pre-registered
-evaluation of label-free alert-injection detection at healthcare MQTT bridges* (Cherih, Lyazid, Kazar).
+evaluation of label-free alert-injection detection at healthcare MQTT bridges* (Cherih, Sabri, Kazar).
 
 The question is whether label-free behavioral detectors at an MQTT bridge can see one bedside device injecting false
 emergency alerts, or replacing real ones, at a rate that looks ordinary. Ten scorers are evaluated under one protocol:
