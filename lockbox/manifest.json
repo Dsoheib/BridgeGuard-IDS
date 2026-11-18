@@ -1,0 +1,33 @@
+{
+ "source": "baseline_data/interleaved/normal_interleaved.csv",
+ "source_sha256": "164b89fd22e8e1e08f364ecf263b53dc3867df60d4a59c03ecfeea6db0cc8f1e",
+ "fractions": [
+  0.6,
+  0.2,
+  0.2
+ ],
+ "purge_minutes": 60,
+ "zones": {
+  "A": {
+   "file": "dev_data/zone_A.csv",
+   "sha256": "371f3da9062c9651257bc53063d19b5a90327375496eb58f96337554e13104c5",
+   "rows": 903858,
+   "start": "2026-02-24 14:22:31",
+   "end": "2026-03-26 05:44:58.916247"
+  },
+  "B": {
+   "file": "dev_data/zone_B.csv",
+   "sha256": "f3a208b97a739239cf58c9cb92fd119ddedae2d20ba0c36375b700e6a4ea31a8",
+   "rows": 303041,
+   "start": "2026-03-26 06:44:58.916247",
+   "end": "2026-04-05 02:52:28.221662"
+  },
+  "C": {
+   "file": "dev_data/zone_C.csv",
+   "sha256": "9868829dfbb1a8cb3722118996bcd7593b86fc6c290006bcbe35ad6d713b19ac",
+   "rows": 324616,
+   "start": "2026-04-05 03:52:28.221662",
+   "end": "2026-04-14 23:59:57.527080"
+  }
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "D": {
+  "zone": "D",
+  "n_beds": 4,
+  "events": 8837319,
+  "emergencies": 18019,
+  "first": "2026-01-05 00:00:00",
+  "last": "2026-01-31 15:13:47",
+  "emergencies_by_signal": {
+   "resp": 13603,
+   "spo2": 3929,
+   "hr": 487
+  },
+  "all_beds_occupied_until": "2026-01-31 15:13:47",
+  "span_hours": 639.2,
+  "bytes": 37636588,
+  "sha256": "6562eaacc33db852c5a193e427619fe7134dafed15cb9dd927df4723ba32b8bd"
+ }
+}

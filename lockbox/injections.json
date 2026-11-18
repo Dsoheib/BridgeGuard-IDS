@@ -1,0 +1,91 @@
+{
+ "inject_py_sha256": "6b6cf9a61e3eff8031193647f11070df5d1297f3e54567920fac2af64417f1e8",
+ "config": {
+  "attack5_file": "baseline_data/interleaved/attack5_interleaved.csv",
+  "attack2_file": "baseline_data/interleaved/attack2_interleaved.csv",
+  "out_dir": "dev_data/injected",
+  "episodes_per_copy": 30,
+  "copies": 3,
+  "seed": 2026,
+  "episode_hours": 2,
+  "a5p_mean_gap_min": 9.0,
+  "a5u_rate_per_hour": 2.0
+ },
+ "seed": 2026,
+ "stretches": 29,
+ "files": {
+  "A5-S_copy0.csv": {
+   "sha256": "3fc440fb5392ac869590c5c55959b5cb803263434c8fb2edb88f78c7711d30c8",
+   "rows": 600
+  },
+  "A5-S_copy1.csv": {
+   "sha256": "3328240680cf42f0eba239bedc779e6e5934126030a788d885250022da6c1174",
+   "rows": 600
+  },
+  "A5-S_copy2.csv": {
+   "sha256": "f97ad1e52a72ea7ded9749a9023378ae446927dfb82090c54baf323072774261",
+   "rows": 600
+  },
+  "A5-R_copy0.csv": {
+   "sha256": "7cb371c388cd7f8a3d9ee1d4d36930b4df1bcaa2a70620959e57cc7225f8ee96",
+   "rows": 607
+  },
+  "A5-R_copy1.csv": {
+   "sha256": "ddb6eea0eeaebd2d53f279886fadfd250df459d392d9f0b57d04c9312761de67",
+   "rows": 616
+  },
+  "A5-R_copy2.csv": {
+   "sha256": "5c6f19b97ad2eb770851c52a761e6dc420918345df2df7a7fd9ece8d39846111",
+   "rows": 626
+  },
+  "A5-P_copy0.csv": {
+   "sha256": "a7f665f0539f2d75eb0d05602f76ce27dfac75dbcad5d4db4c80b62edac9dd07",
+   "rows": 367
+  },
+  "A5-P_copy1.csv": {
+   "sha256": "d1041e49e2ba9c4786a93a85641a431bc415b68bb852f4d7c169f0836d82d66f",
+   "rows": 398
+  },
+  "A5-P_copy2.csv": {
+   "sha256": "d777d1dc1b318dd3dd6f86dd5438ed97768ae3570a16d3d7fb3d5f9b155804b8",
+   "rows": 397
+  },
+  "A5-M_copy0.csv": {
+   "sha256": "c2b718c55cb68facb426d4215c4e7be79e5d5b164230480c2490838dfbb9dda0",
+   "rows": 443
+  },
+  "A5-M_copy1.csv": {
+   "sha256": "d05e6181c5edef532798e90b090ed6016dac2521d569715a9e10a6d6dbb5e67d",
+   "rows": 549
+  },
+  "A5-M_copy2.csv": {
+   "sha256": "6c589afe3d6890833e2fa2ac797147f8d10b04e715ffcf68ed709b2918da6a04",
+   "rows": 471
+  },
+  "A5-U_copy0.csv": {
+   "sha256": "2fe8495061f3251ee89070a25b5ad8a67ece86360744169b259bc1f962e7f938",
+   "rows": 114
+  },
+  "A5-U_copy1.csv": {
+   "sha256": "affec2b575d0850d4b0bc88a95382df790b87148df77c39879e383cffb13af17",
+   "rows": 118
+  },
+  "A5-U_copy2.csv": {
+   "sha256": "b0cfc6822f87ce99298bf79ddff7bc576013fd7a3bb43884694c44bef824ef61",
+   "rows": 127
+  },
+  "A2_copy0.csv": {
+   "sha256": "d4ce756c40b9051963cb41d44f7dcb2144c69fa2a1af24dd5834ea49119d8f83",
+   "rows": 1204072
+  },
+  "A2_copy1.csv": {
+   "sha256": "12323f08eee449e16eb9b884f44dabffd369337b411b3d3ec4142fa77175a9ab",
+   "rows": 1302125
+  },
+  "A2_copy2.csv": {
+   "sha256": "93b327df168e4d853b1a089bd35c71edca217d34c7f14e0c460f27ade314633a",
+   "rows": 1207444
+  }
+ },
+ "episodes_sha256": "a16cb333456b9a7debcdf5a4d1d7c46a5efbeeae68926ab1dd339433da0b4d27"
+}

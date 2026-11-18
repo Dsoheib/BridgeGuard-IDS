@@ -1,0 +1,12 @@
+\begin{tabular}{l l l r r}
+\toprule
+Attack & Mode & Timing & Overlapped-hour count (median) & Ward hour, median (p95) \\
+\midrule
+Flood & add & dev.\ flood timing, alert-anchored 2\,h & 13320 & 13346 (33361) \\
+Steady & add & 20 alerts, waits 300--600\,s & 7 & 32 (56) \\
+Replay & add & dev.\ slow-poisoning timing, alert-anchored 2\,h & 5 & 32 (61) \\
+Poisson & add & Poisson, 6.77/h & 4 & 30 (56) \\
+Mimic & replace & Zone A bed segment, alert-anchored 2\,h & 7 & 29 (52) \\
+Sparse & replace & Poisson, 2.0/h & 1 & 23 (45) \\
+\bottomrule
+\end{tabular}

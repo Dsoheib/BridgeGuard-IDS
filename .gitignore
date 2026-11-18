@@ -1,0 +1,8 @@
+testbed_data/
+dev_data/
+baseline_data/
+bridgeguard_features/
+__pycache__/
+*.pyc
+.DS_Store
+.pytest_cache/

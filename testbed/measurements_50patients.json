@@ -1,0 +1,54 @@
+{
+ "patients": 50,
+ "records": 86,
+ "fs_counts": {
+  "0.01667": 50,
+  "1.0": 36
+ },
+ "by_rate": {
+  "0.01667": {
+   "records": 50,
+   "hours": 1865.0,
+   "HR": {
+    "records_with_signal": 50,
+    "median_present_share": 0.999,
+    "median_s_between_changes": 60.0,
+    "median_new_value_share": 0.994
+   },
+   "SpO2": {
+    "records_with_signal": 50,
+    "median_present_share": 0.991,
+    "median_s_between_changes": 60.0,
+    "median_new_value_share": 0.905
+   },
+   "RESP": {
+    "records_with_signal": 50,
+    "median_present_share": 0.996,
+    "median_s_between_changes": 60.0,
+    "median_new_value_share": 0.992
+   }
+  },
+  "1.0": {
+   "records": 36,
+   "hours": 1767.7,
+   "HR": {
+    "records_with_signal": 36,
+    "median_present_share": 0.96,
+    "median_s_between_changes": 2.0,
+    "median_new_value_share": 0.349
+   },
+   "SpO2": {
+    "records_with_signal": 35,
+    "median_present_share": 0.897,
+    "median_s_between_changes": 6.5,
+    "median_new_value_share": 0.065
+   },
+   "RESP": {
+    "records_with_signal": 36,
+    "median_present_share": 0.945,
+    "median_s_between_changes": 4.0,
+    "median_new_value_share": 0.176
+   }
+  }
+ }
+}

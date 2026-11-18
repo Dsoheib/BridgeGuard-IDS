@@ -1,0 +1,39 @@
+{
+ "features": [
+  "alert_rate_acceleration",
+  "freq_rolling_std_5w",
+  "consecutive_emergency_count",
+  "alert_frequency_per_hour",
+  "burst_score",
+  "inter_alert_interval_mean",
+  "payload_entropy",
+  "regularity_coefficient",
+  "inter_interval_variance",
+  "topic_diversity"
+ ],
+ "zone_A_complete_hours": 380,
+ "zone_B_complete_hours": 119,
+ "seeds": {
+  "0": {
+   "train_hours": 323,
+   "holdout_hours": 57,
+   "calibration_hours": 119,
+   "min_attainable_p": 0.008333333333333333,
+   "score": "rank_IF"
+  },
+  "1": {
+   "train_hours": 323,
+   "holdout_hours": 57,
+   "calibration_hours": 119,
+   "min_attainable_p": 0.008333333333333333,
+   "score": "rank_IF"
+  },
+  "2": {
+   "train_hours": 323,
+   "holdout_hours": 57,
+   "calibration_hours": 119,
+   "min_attainable_p": 0.008333333333333333,
+   "score": "rank_IF"
+  }
+ }
+}

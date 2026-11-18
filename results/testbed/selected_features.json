@@ -1,0 +1,122 @@
+{
+ "selected": [
+  "alert_rate_acceleration",
+  "temporal_clustering_score",
+  "regularity_coefficient",
+  "n_messages",
+  "freq_rolling_std_5w",
+  "topic_diversity",
+  "burst_score",
+  "inter_interval_variance",
+  "payload_entropy",
+  "inter_alert_interval_mean",
+  "alert_frequency_per_hour",
+  "normal_emergency_ratio"
+ ],
+ "rules": {
+  "exclude": [
+   "time_sin",
+   "time_cos",
+   "window_start_time",
+   "window_end_time"
+  ],
+  "impute": {
+   "inter_alert_interval_mean": 60.0,
+   "regularity_coefficient": 0.0,
+   "freq_rolling_std_5w": 0.0
+  },
+  "min_nonmode_share": 0.02,
+  "blocks": 5,
+  "max_ks": 0.25,
+  "redundancy": 0.92,
+  "redundancy_on_alert_windows": true
+ },
+ "zone_A_windows": 13138,
+ "report": {
+  "alert_frequency_per_hour": {
+   "nonmode_share": 0.9658,
+   "max_block_ks": 0.1899,
+   "degenerate": false,
+   "unstable": false
+  },
+  "normal_emergency_ratio": {
+   "nonmode_share": 0.9791,
+   "max_block_ks": 0.1953,
+   "degenerate": false,
+   "unstable": false
+  },
+  "inter_alert_interval_mean": {
+   "nonmode_share": 0.996,
+   "max_block_ks": 0.1843,
+   "degenerate": false,
+   "unstable": false
+  },
+  "inter_interval_variance": {
+   "nonmode_share": 0.9934,
+   "max_block_ks": 0.1746,
+   "degenerate": false,
+   "unstable": false
+  },
+  "burst_score": {
+   "nonmode_share": 0.7802,
+   "max_block_ks": 0.1679,
+   "degenerate": false,
+   "unstable": false
+  },
+  "topic_diversity": {
+   "nonmode_share": 0.7548,
+   "max_block_ks": 0.1666,
+   "degenerate": false,
+   "unstable": false
+  },
+  "payload_entropy": {
+   "nonmode_share": 0.9982,
+   "max_block_ks": 0.1767,
+   "degenerate": false,
+   "unstable": false
+  },
+  "consecutive_emergency_count": {
+   "nonmode_share": 0.0018,
+   "max_block_ks": 0.0035,
+   "degenerate": true,
+   "unstable": false
+  },
+  "alert_rate_acceleration": {
+   "nonmode_share": 0.9166,
+   "max_block_ks": 0.0418,
+   "degenerate": false,
+   "unstable": false
+  },
+  "regularity_coefficient": {
+   "nonmode_share": 0.996,
+   "max_block_ks": 0.0748,
+   "degenerate": false,
+   "unstable": false
+  },
+  "temporal_clustering_score": {
+   "nonmode_share": 0.9138,
+   "max_block_ks": 0.0512,
+   "degenerate": false,
+   "unstable": false
+  },
+  "n_messages": {
+   "nonmode_share": 0.9789,
+   "max_block_ks": 0.115,
+   "degenerate": false,
+   "unstable": false
+  },
+  "n_emergency": {
+   "nonmode_share": 0.9658,
+   "max_block_ks": 0.1899,
+   "degenerate": false,
+   "unstable": false,
+   "redundant_with": "alert_frequency_per_hour"
+  },
+  "freq_rolling_std_5w": {
+   "nonmode_share": 0.9989,
+   "max_block_ks": 0.1208,
+   "degenerate": false,
+   "unstable": false
+  }
+ }
+}

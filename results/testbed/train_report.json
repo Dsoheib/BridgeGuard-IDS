@@ -1,0 +1,41 @@
+{
+ "features": [
+  "alert_rate_acceleration",
+  "temporal_clustering_score",
+  "regularity_coefficient",
+  "n_messages",
+  "freq_rolling_std_5w",
+  "topic_diversity",
+  "burst_score",
+  "inter_interval_variance",
+  "payload_entropy",
+  "inter_alert_interval_mean",
+  "alert_frequency_per_hour",
+  "normal_emergency_ratio"
+ ],
+ "zone_A_complete_hours": 2190,
+ "zone_B_complete_hours": 497,
+ "seeds": {
+  "0": {
+   "train_hours": 1861,
+   "holdout_hours": 329,
+   "calibration_hours": 497,
+   "min_attainable_p": 0.002008032128514056,
+   "score": "rank_IF"
+  },
+  "1": {
+   "train_hours": 1861,
+   "holdout_hours": 329,
+   "calibration_hours": 497,
+   "min_attainable_p": 0.002008032128514056,
+   "score": "rank_IF"
+  },
+  "2": {
+   "train_hours": 1861,
+   "holdout_hours": 329,
+   "calibration_hours": 497,
+   "min_attainable_p": 0.002008032128514056,
+   "score": "rank_IF"
+  }
+ }
+}

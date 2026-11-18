@@ -1,0 +1,101 @@
+{
+ "selected": [
+  "alert_rate_acceleration",
+  "freq_rolling_std_5w",
+  "consecutive_emergency_count",
+  "regularity_coefficient",
+  "inter_interval_variance",
+  "topic_diversity"
+ ],
+ "report": {
+  "alert_frequency_per_hour": {
+   "nonmode_share": 0.204,
+   "max_block_ks": 0.0826,
+   "degenerate": false,
+   "unstable": false,
+   "redundant_with": "consecutive_emergency_count"
+  },
+  "normal_emergency_ratio": {
+   "nonmode_share": 0.936,
+   "max_block_ks": 0.3471,
+   "degenerate": false,
+   "unstable": true
+  },
+  "inter_alert_interval_mean": {
+   "nonmode_share": 0.204,
+   "max_block_ks": 0.1008,
+   "degenerate": false,
+   "unstable": false,
+   "redundant_with": "consecutive_emergency_count"
+  },
+  "inter_interval_variance": {
+   "nonmode_share": 0.204,
+   "max_block_ks": 0.1502,
+   "degenerate": false,
+   "unstable": false
+  },
+  "burst_score": {
+   "nonmode_share": 0.204,
+   "max_block_ks": 0.0885,
+   "degenerate": false,
+   "unstable": false,
+   "redundant_with": "consecutive_emergency_count"
+  },
+  "topic_diversity": {
+   "nonmode_share": 0.204,
+   "max_block_ks": 0.1657,
+   "degenerate": false,
+   "unstable": false
+  },
+  "payload_entropy": {
+   "nonmode_share": 0.204,
+   "max_block_ks": 0.1135,
+   "degenerate": false,
+   "unstable": false,
+   "redundant_with": "consecutive_emergency_count"
+  },
+  "consecutive_emergency_count": {
+   "nonmode_share": 0.204,
+   "max_block_ks": 0.0822,
+   "degenerate": false,
+   "unstable": false
+  },
+  "alert_rate_acceleration": {
+   "nonmode_share": 0.2018,
+   "max_block_ks": 0.0588,
+   "degenerate": false,
+   "unstable": false
+  },
+  "regularity_coefficient": {
+   "nonmode_share": 0.204,
+   "max_block_ks": 0.1374,
+   "degenerate": false,
+   "unstable": false
+  },
+  "temporal_clustering_score": {
+   "nonmode_share": 0.0129,
+   "max_block_ks": 0.0162,
+   "degenerate": true,
+   "unstable": false
+  },
+  "n_messages": {
+   "nonmode_share": 0.9098,
+   "max_block_ks": 0.4817,
+   "degenerate": false,
+   "unstable": true
+  },
+  "n_emergency": {
+   "nonmode_share": 0.204,
+   "max_block_ks": 0.0826,
+   "degenerate": false,
+   "unstable": false,
+   "redundant_with": "consecutive_emergency_count"
+  },
+  "freq_rolling_std_5w": {
+   "nonmode_share": 0.2506,
+   "max_block_ks": 0.0783,
+   "degenerate": false,
+   "unstable": false
+  }
+ }
+}

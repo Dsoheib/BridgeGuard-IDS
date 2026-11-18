@@ -1,0 +1,102 @@
+{
+ "inject_testbed_py_sha256": "1f52f4a91edc54983cea863087c78de4e17e4fa30ce32a37153945e9390bfd1c",
+ "config": {
+  "seed": 2027,
+  "episodes_per_copy": 30,
+  "copies": 3,
+  "episode_hours": 2,
+  "bed": "one per episode, drawn with the injection seed",
+  "a5p_rate_per_hour": 6.77,
+  "a5u_rate_per_hour": 2.0,
+  "mode": {
+   "A2": "add",
+   "A5-S": "add",
+   "A5-R": "add",
+   "A5-P": "add",
+   "A5-M": "replace",
+   "A5-U": "replace"
+  },
+  "forged_alert": "copy signal, direction and value of a uniformly drawn Zone A emergency"
+ },
+ "bed_stretches": {
+  "0": 13,
+  "1": 24,
+  "2": 13,
+  "3": 8
+ },
+ "files": {
+  "A5-S_copy0.csv.gz": {
+   "sha256": "f846035368c0d3b22e0f51d0e08047244d2169ef568178f67de5ef5824bef71d",
+   "rows": 600
+  },
+  "A5-S_copy1.csv.gz": {
+   "sha256": "e76dc8e86eefcf5aca1170a7e0d8769669c5c32fc0e87f414d784fca139a3ade",
+   "rows": 600
+  },
+  "A5-S_copy2.csv.gz": {
+   "sha256": "ab393e8e56910b944784397e4c2639e5f6a830d1ffe435450ed91d8a07865de0",
+   "rows": 600
+  },
+  "A5-R_copy0.csv.gz": {
+   "sha256": "7d2b3884b98940adec866c589522b2c20d699c08db1ae1b538af262b73672569",
+   "rows": 548
+  },
+  "A5-R_copy1.csv.gz": {
+   "sha256": "46718e496a65f334e820ae76e523b1b80a1e6ba3fc6f52e629501375619946e1",
+   "rows": 596
+  },
+  "A5-R_copy2.csv.gz": {
+   "sha256": "a3a69509f660744dc6515a502ef7209c9d4488fa45c68cbf8cbfdd80346c6c5b",
+   "rows": 537
+  },
+  "A5-P_copy0.csv.gz": {
+   "sha256": "78a52d89d3d7ddfa3572c69eca33eda58387f65b06bad78a13dd2d62e4e26467",
+   "rows": 375
+  },
+  "A5-P_copy1.csv.gz": {
+   "sha256": "8ff4b4e77f6d6480f8410be89d7bb5508c78c7d0b983f4504cb05387310593f4",
+   "rows": 394
+  },
+  "A5-P_copy2.csv.gz": {
+   "sha256": "0b483a67b44200d1f51ae88eac906d7a50ab4ddc654e2f3291defde1bb58045c",
+   "rows": 406
+  },
+  "A5-M_copy0.csv.gz": {
+   "sha256": "a3fee3c0ca045540df0d727fdd1f12eab7102ec524aab4aca4af20f2cfc5855c",
+   "rows": 649
+  },
+  "A5-M_copy1.csv.gz": {
+   "sha256": "1891f8ad857f55447f138fdb1b6688f1d2323921db308a492e620cefd3053ab1",
+   "rows": 637
+  },
+  "A5-M_copy2.csv.gz": {
+   "sha256": "0964e97a55ca93a45b06c4cf8c94d87ed2059af17584545666659ca8f983e7c9",
+   "rows": 544
+  },
+  "A5-U_copy0.csv.gz": {
+   "sha256": "376eb456f12cfcf21a75e7e431f5cc4cf99156c8530e047fcaf6ab963baad62d",
+   "rows": 112
+  },
+  "A5-U_copy1.csv.gz": {
+   "sha256": "f16f6c05d26c89d41fd31b5c4b79ba768ef68f8dce7e4e032a3dbff0ef37c9e5",
+   "rows": 129
+  },
+  "A5-U_copy2.csv.gz": {
+   "sha256": "0f4cdcbcc2bd607b1479a38f3a77ebda9aaf58d7213afae7ec1a4cf235aa7cb6",
+   "rows": 108
+  },
+  "A2_copy0.csv.gz": {
+   "sha256": "6ccc83914af11dc1e0e952b92ac79691c98bbe91a85ba215be83864d65bd2771",
+   "rows": 1231935
+  },
+  "A2_copy1.csv.gz": {
+   "sha256": "d6cd78d93eb6d5c53bda2f0422d2d7de636c16d5ab001d05d597321c9be78ab6",
+   "rows": 1196411
+  },
+  "A2_copy2.csv.gz": {
+   "sha256": "1cf61e079aea6141a4d184fe07e2b70c3cdebaab825c2bdb3eb1575d73653d0b",
+   "rows": 1105800
+  }
+ },
+ "episodes_sha256": "5dc2f242ee68c95942bad801f5748421a7ce58e45a1c03885a698a65d2cd6362"
+}

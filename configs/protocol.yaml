@@ -1,0 +1,92 @@
+# BridgeGuard protocol configuration. All pipeline parameters live here.
+data:
+  # Development background only (simulated stream). Final results come from the trace-driven testbed.
+  background: baseline_data/interleaved/normal_interleaved.csv
+  time_col: timestamp
+  out_dir: dev_data              # untracked; zone files are written here
+
+split:
+  fractions: [0.6, 0.2, 0.2]    # zones A (train), B (calibration), C (test), chronological
+  purge_minutes: 60             # one window length between zones
+
+windowing:
+  window_minutes: 60
+  stride_minutes: 10            # identical for all traffic
+
+calibration:
+  alpha_flag: 0.05              # primary, verifiable operating point
+  alpha_drop: 0.01              # nominal on the current data
+
+select:                         # label-free, Zone A windows only; thresholds fixed before results
+  exclude: [time_sin, time_cos, window_start_time, window_end_time]   # context / metadata, not behavior
+  impute:                       # a-priori meaning of "undefined" (< 2 alerts in the window)
+    inter_alert_interval_mean: 60.0     # no interval observed within a 60-min window
+    regularity_coefficient: 0.0
+    freq_rolling_std_5w: 0.0
+  min_nonmode_share: 0.02       # non-degeneracy: >= 2% of windows differ from the most common value
+  blocks: 5                     # temporal stability: contiguous time blocks of Zone A
+  max_ks: 0.25                  # keep if max KS(block vs rest of Zone A) <= 0.25
+  redundancy: 0.92              # drop if |Pearson| > 0.92 AND |Spearman| > 0.92 with a kept feature
+  # Rule revision 1 (2026-11-15, before any attack or Zone B/C window was examined):
+  # redundancy is computed on windows with >= 1 alert. On all windows, 80% zeros make every alert
+  # feature correlate > 0.92 with the 0/1 alert-presence flag, so the filter only measured presence.
+  # The unrevised result is kept in results/dev/selected_features_rev0.json.
+  redundancy_on_alert_windows: true
+
+detector:                       # frozen before any Zone C score (protocol: protocol/PROTOCOL.md)
+  holdout_frac: 0.15            # last 15% of Zone A complete hours: rank reference (never fitted on)
+  use_lstm: false               # frozen: score = forest rank only; LSTM forecaster is ablation-only
+  history_hours: 3              # ablation LSTM: previous 3 complete contiguous hours
+  lstm_units: 16
+  n_estimators: 300             # fixed a priori, no search (hard-coded in detector.py)
+  primary_seed: 0               # seeds 1, 2 reported as spread
+  alpha: 0.05                   # operating point
+  g2_copy: 0                    # the gated copy for G2
+  g2_fa_test_level: 0.05        # amendment (after Zone C): one-sided binomial calibration test replaces "<= 1 false alarm"
+
+# Development-table baselines added after the calibration amendment, hyperparameters fixed before their first run (no search).
+# Fit on the 323 Zone A fit hours, calibrated on the 119 Zone B hours; neither changes the primary scorer.
+kitnet:                         # Mirsky et al. 2018: feature map -> ensemble of small autoencoders -> output autoencoder
+  max_cluster: 5                # library default is 10, which would put all 10 features in one autoencoder (no ensemble)
+  hidden_ratio: 0.75            # KitNET default
+  learning_rate: 0.1            # KitNET default (plain SGD, tied weights, sigmoid, min-max on the fit hours)
+  epochs: 100                   # 323 hours x 100 = 32,300 updates (KitNET trains one online pass over its grace period)
+lstm_ae:
+  seq_hours: 3                  # current hour + 2 previous contiguous complete hours; otherwise unscored (never alarms)
+  units: 16                     # same as the ablation forecaster
+  epochs: 300
+  patience: 20                  # early stopping on sequences from the 57 held-out Zone A hours
+  batch_size: 32
+
+seeds: [0, 1, 2]
+
+inject:
+  attack5_file: baseline_data/interleaved/attack5_interleaved.csv
+  attack2_file: baseline_data/interleaved/attack2_interleaved.csv
+  out_dir: dev_data/injected       # untracked; hashes go to lockbox/injections.json
+  episodes_per_copy: 30
+  copies: 3
+  seed: 2026
+  episode_hours: 2                # A5-R, A5-P, A5-M, A5-U, A2; A5-S length comes from its waits
+  a5p_mean_gap_min: 9.0           # primary (matches A5-R); 7.5 is the secondary setting
+  a5u_rate_per_hour: 2.0          # below the normal mean of 2.47/h
+
+lockbox:
+  manifest: lockbox/manifest.json
+
+testbed:                        # (protocol/TESTBED_SCORERS.md); generator: testbed/generator.py
+  split: {A: 120, B: 40, C: 41} # one-second patients in seed-2026 draw order
+  n_beds: 4                     # 8 beds would leave Zone B 215 h and Zone C 277 h with all beds occupied
+  cut: all_beds_occupied        # each zone ends when its first bed runs out; the single-bed tail is dropped
+  out_dir: testbed_data/zones
+
+testbed_inject:                 # frozen before Zones B/C were generated (protocol/TESTBED_SCORERS.md, "Testbed attacks")
+  seed: 2026
+  episodes_per_copy: 30
+  copies: 3
+  episode_hours: 2              # A2, A5-R, A5-P, A5-M, A5-U; A5-S length comes from its waits
+  bed: one per episode, drawn with the injection seed
+  a5p_rate_per_hour: 6.77       # Zone A per-bed mean (results/testbed/zone_A_bed_rates.json)
+  a5u_rate_per_hour: 2.0
+  mode: {A2: add, A5-S: add, A5-R: add, A5-P: add, A5-M: replace, A5-U: replace}
+  forged_alert: copy signal, direction and value of a uniformly drawn Zone A emergency  # A5-S, A5-R, A5-P, A5-U

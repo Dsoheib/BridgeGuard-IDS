@@ -1,0 +1,53 @@
+{
+ "A": {
+  "zone": "A",
+  "n_beds": 4,
+  "events": 30055184,
+  "emergencies": 59372,
+  "first": "2026-01-05 00:00:00",
+  "last": "2026-04-06 06:37:40",
+  "emergencies_by_signal": {
+   "hr": 3858,
+   "resp": 45235,
+   "spo2": 10279
+  },
+  "all_beds_occupied_until": "2026-04-06 06:37:40",
+  "span_hours": 2190.6,
+  "bytes": 137669454,
+  "sha256": "ed0f11ce11f98812533098a4a828a46a580f099894ed044fc47e43fd6daa2bf0"
+ },
+ "B": {
+  "zone": "B",
+  "n_beds": 4,
+  "events": 6776602,
+  "emergencies": 15926,
+  "first": "2026-01-05 00:00:04",
+  "last": "2026-01-25 18:11:30",
+  "emergencies_by_signal": {
+   "spo2": 3259,
+   "resp": 12318,
+   "hr": 349
+  },
+  "all_beds_occupied_until": "2026-01-25 18:11:30",
+  "span_hours": 498.2,
+  "bytes": 28552132,
+  "sha256": "3d4136b67bd9b96bbfa75bc42c1409faac1dd0fad19bba8210771ea813a62798"
+ },
+ "C": {
+  "zone": "C",
+  "n_beds": 4,
+  "events": 8072616,
+  "emergencies": 18957,
+  "first": "2026-01-05 00:00:00",
+  "last": "2026-01-29 16:05:15",
+  "emergencies_by_signal": {
+   "resp": 14388,
+   "spo2": 3503,
+   "hr": 1066
+  },
+  "all_beds_occupied_until": "2026-01-29 16:05:15",
+  "span_hours": 592.1,
+  "bytes": 36031490,
+  "sha256": "0cd3c1f19fafc883835972dd814f5fbb732b23678a98f90738c3120a32e502af"
+ }
+}

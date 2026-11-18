@@ -1,0 +1,52 @@
+{
+ "features": [
+  "alert_rate_acceleration",
+  "consecutive_emergency_count",
+  "regularity_coefficient",
+  "inter_interval_variance",
+  "burst_score",
+  "inter_alert_interval_mean",
+  "temporal_clustering_score",
+  "topic_diversity",
+  "freq_rolling_std_5w",
+  "alert_frequency_per_hour",
+  "n_messages",
+  "normal_emergency_ratio",
+  "payload_entropy"
+ ],
+ "zone_A_complete_hours": 8187,
+ "zone_B_complete_hours": 1836,
+ "seeds": {
+  "0": {
+   "train_hours": 6954,
+   "holdout_hours": 1233,
+   "calibration_hours": 1836,
+   "min_attainable_p": 0.0005443658138268917,
+   "score": "rank_IF",
+   "min_p_zone_B_ranks_can_return": 0.00163,
+   "zone_B_bed_hours_at_top_rank": 2
+  },
+  "1": {
+   "train_hours": 6954,
+   "holdout_hours": 1233,
+   "calibration_hours": 1836,
+   "min_attainable_p": 0.0005443658138268917,
+   "score": "rank_IF",
+   "min_p_zone_B_ranks_can_return": 0.00163,
+   "zone_B_bed_hours_at_top_rank": 2
+  },
+  "2": {
+   "train_hours": 6954,
+   "holdout_hours": 1233,
+   "calibration_hours": 1836,
+   "min_attainable_p": 0.0005443658138268917,
+   "score": "rank_IF",
+   "min_p_zone_B_ranks_can_return": 0.00109,
+   "zone_B_bed_hours_at_top_rank": 1
+  }
+ },
+ "bed_alarm_threshold": 0.0125,
+ "holdout_rule": "fit: hour_index < 1861; rank reference: hour_index >= 1861",
+ "fit_bed_hours": 6954,
+ "rank_reference_bed_hours": 1233
+}
